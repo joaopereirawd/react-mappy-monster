@@ -1,3 +1,5 @@
+# React Mappy Monster
+
 ## Installation
 ```
 yarn add react-mappy-monster
