@@ -403,77 +403,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var InfoBubble = function (_Component) {
-    _inherits(InfoBubble, _Component);
-
-    function InfoBubble(props) {
-        _classCallCheck(this, InfoBubble);
-
-        var _this = _possibleConstructorReturn(this, (InfoBubble.__proto__ || Object.getPrototypeOf(InfoBubble)).call(this, props));
-
-        _this.youtube = {
-            url: 'https://www.youtube.com/embed/',
-            autoPlay: _this.props.youtube.autoplay ? _this.props.youtube.autoplay : false,
-            controls: false,
-            code: _this.props.youtube.embed_code ? _this.props.youtube.embed_code : null
-        };
-
-        _this.image = {
-            url: _this.props.image.url ? _this.props.image.url : ''
-        };
-
-        return _this;
-    }
-
-    _createClass(InfoBubble, [{
-        key: 'render',
-        value: function render() {
-            var yt_url = '' + this.youtube.url + this.youtube.code + '?&autoplay=' + this.youtube.autoPlay + '&controls=' + this.youtube.controls; // youtube url
-            var yt_iframe = _react2.default.createElement('iframe', { width: '100%', height: '200px', src: yt_url, frameborder: '0', allow: 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen: true });
-            var yt_image = _react2.default.createElement('img', { src: this.image.url });
-
-            return _react2.default.createElement(
-                'div',
-                { className: 'info-window-wrapper' },
-                _react2.default.createElement(
-                    'div',
-                    { className: 'image' },
-                    this.youtube.code && this.image.url ? yt_iframe : this.image.url ? yt_image : this.youtube.code ? yt_iframe : ''
-                )
-            );
-        }
-    }]);
-
-    return InfoBubble;
-}(_react.Component);
-
-exports.default = InfoBubble;
-
-/***/ }),
+/* 5 */,
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -585,8 +515,36 @@ module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.Map = exports.Content = exports.Youtube = exports.InfoWindow = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _infoWindow = __webpack_require__(26);
+
+Object.defineProperty(exports, 'InfoWindow', {
+    enumerable: true,
+    get: function get() {
+        return _infoWindow.InfoWindow;
+    }
+});
+
+var _youtube = __webpack_require__(25);
+
+Object.defineProperty(exports, 'Youtube', {
+    enumerable: true,
+    get: function get() {
+        return _youtube.Youtube;
+    }
+});
+
+var _content = __webpack_require__(27);
+
+Object.defineProperty(exports, 'Content', {
+    enumerable: true,
+    get: function get() {
+        return _content.Content;
+    }
+});
 
 var _react = __webpack_require__(1);
 
@@ -597,10 +555,6 @@ var _reactDom = __webpack_require__(6);
 var _mapMarker = __webpack_require__(8);
 
 var _mapMarker2 = _interopRequireDefault(_mapMarker);
-
-var _popup = __webpack_require__(5);
-
-var _popup2 = _interopRequireDefault(_popup);
 
 __webpack_require__(7);
 
@@ -614,55 +568,44 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var defaultTheme = [{ "elementType": "geometry", "stylers": [{ "color": "#f5f5f5" }] }, { "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "elementType": "labels.text.fill", "stylers": [{ "color": "#616161" }] }, { "elementType": "labels.text.stroke", "stylers": [{ "color": "#f5f5f5" }] }, { "featureType": "administrative.land_parcel", "elementType": "labels.text.fill", "stylers": [{ "color": "#bdbdbd" }] }, { "featureType": "poi", "elementType": "geometry", "stylers": [{ "color": "#eeeeee" }] }, { "featureType": "poi", "elementType": "labels.text.fill", "stylers": [{ "color": "#757575" }] }, { "featureType": "poi.park", "elementType": "geometry", "stylers": [{ "color": "#e5e5e5" }] }, { "featureType": "poi.park", "elementType": "labels.text.fill", "stylers": [{ "color": "#9e9e9e" }] }, { "featureType": "road", "elementType": "geometry", "stylers": [{ "color": "#ffffff" }] }, { "featureType": "road.arterial", "elementType": "labels.text.fill", "stylers": [{ "color": "#757575" }] }, { "featureType": "road.highway", "elementType": "geometry", "stylers": [{ "color": "#dadada" }] }, { "featureType": "road.highway", "elementType": "labels.text.fill", "stylers": [{ "color": "#616161" }] }, { "featureType": "road.local", "elementType": "labels.text.fill", "stylers": [{ "color": "#9e9e9e" }] }, { "featureType": "transit.line", "elementType": "geometry", "stylers": [{ "color": "#e5e5e5" }] }, { "featureType": "transit.station", "elementType": "geometry", "stylers": [{ "color": "#eeeeee" }] }, { "featureType": "water", "elementType": "geometry", "stylers": [{ "color": "#ebf4ff" }] }, { "featureType": "water", "elementType": "labels.text.fill", "stylers": [{ "color": "#9e9e9e" }] }];
 
-var Map = function (_Component) {
-    _inherits(Map, _Component);
+//Export Modules
+
+var Map = exports.Map = function (_React$Component) {
+    _inherits(Map, _React$Component);
 
     function Map(props) {
         _classCallCheck(this, Map);
 
         var _this = _possibleConstructorReturn(this, (Map.__proto__ || Object.getPrototypeOf(Map)).call(this, props));
 
-        _this.gMapOptions = {
-            googleAPIOpts: {
-                marker: {
-                    icon: _this.props.gMapOptions.marker.icon ? _this.props.gMapOptions.marker.icon : _mapMarker2.default,
-                    title: _this.props.gMapOptions.marker.title ? _this.props.gMapOptions.marker.title : ''
-                },
-                mapSize: {
-                    width: _this.props.gMapOptions.mapSize.width ? _this.props.gMapOptions.mapSize.width : '100%',
-                    height: _this.props.gMapOptions.mapSize.height ? _this.props.gMapOptions.mapSize.height : '450px'
-                },
-                location: {
-                    lat: _this.props.gMapOptions.mapControls.location.lat ? _this.props.gMapOptions.mapControls.location.lat : 37.422204,
-                    lng: _this.props.gMapOptions.mapControls.location.lng ? _this.props.gMapOptions.mapControls.location.lng : -122.083596
-                },
-                center: {
-                    lat: _this.props.gMapOptions.mapControls.center.lat ? _this.props.gMapOptions.mapControls.center.lat : 37.422204,
-                    lng: _this.props.gMapOptions.mapControls.center.lng ? _this.props.gMapOptions.mapControls.center.lng : -122.083596
-                },
-                zoom: _this.props.gMapOptions.mapControls.initZoom ? _this.props.gMapOptions.mapControls.initZoom : 5,
-                onClickZoom: _this.props.gMapOptions.mapControls.onClickZoom ? _this.props.gMapOptions.mapControls.onClickZoom : 17,
-                styles: _this.props.gMapOptions.mapControls.styles ? _this.props.gMapOptions.mapControls.styles : defaultTheme,
-                mapTypeControl: _this.props.gMapOptions.mapControls.mapTypeControl ? _this.props.gMapOptions.mapControls.mapTypeControl : false,
-                streetViewControl: _this.props.gMapOptions.mapControls.streetViewControl ? _this.props.gMapOptions.mapControls.streetViewControl : false,
-                rotateControl: _this.props.gMapOptions.mapControls.rotateControl ? _this.props.gMapOptions.mapControls.rotateControl : false,
-                fullscreenControl: _this.props.gMapOptions.mapControls.fullscreenControl ? _this.props.gMapOptions.mapControls.fullscreenControl : false,
-                scrollwheel: _this.props.gMapOptions.mapControls.scrollwheel ? _this.props.gMapOptions.mapControls.scrollwheel : false,
-                infoWindowOffSetY: _this.props.gMapOptions.infoWindowOffSetY ? _this.props.gMapOptions.infoWindowOffSetY : -60,
-                infoWindowStartOpen: _this.props.gMapOptions.infoWindowStartOpen ? _this.props.gMapOptions.infoWindowStartOpen : false
-            }
-        };
-
-        _this.monsterOptions = {
-            youtube: {
-                embed_code: _this.props.popUp.youtube ? _this.props.popUp.youtube.embed_code : ''
+        _this.mappyOpts = {
+            marker: {
+                click: true,
+                icon: _mapMarker2.default,
+                title: 'Your Marker Title Goes here'
             },
-            image: {
-                url: _this.props.popUp.image ? _this.props.popUp.image.url : ''
-            }
-        };
-        _this.popUpContent = {
-            content: _this.props.popUpContent ? _this.props.popUpContent : ''
+            mapSize: {
+                width: '100%',
+                height: '450px'
+            },
+            location: {
+                lat: 37.422204,
+                lng: -122.083596
+            },
+            center: {
+                lat: 37.422204,
+                lng: -122.083596
+            },
+            zoom: 5,
+            onClickZoom: 17,
+            styles: defaultTheme,
+            mapTypeControl: false,
+            streetViewControl: false,
+            rotateControl: false,
+            fullscreenControl: false,
+            scrollwheel: false,
+            infoWindowOffSetY: -60,
+            infoWindowStartOpen: false
         };
 
         _this.gScript = _this.gScript.bind(_this);
@@ -677,10 +620,10 @@ var Map = function (_Component) {
 
             var infoWindow = new window.google.maps.InfoWindow({
                 content: '<div id="infoWindow" />',
-                pixelOffset: new window.google.maps.Size(0, this.gMapOptions.googleAPIOpts.infoWindowOffSetY),
+                pixelOffset: new window.google.maps.Size(0, this.mappyOpts.infoWindowOffSetY),
                 position: {
-                    lat: this.gMapOptions.googleAPIOpts.location.lat,
-                    lng: this.gMapOptions.googleAPIOpts.location.lng
+                    lat: this.mappyOpts.location.lat,
+                    lng: this.mappyOpts.location.lng
                 }
             });
 
@@ -688,20 +631,7 @@ var Map = function (_Component) {
                 (0, _reactDom.render)(_react2.default.createElement(
                     'div',
                     { className: 'inner-info' },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'content' },
-                        _react2.default.createElement(_popup2.default, {
-                            youtube: {
-                                embed_code: _this2.monsterOptions.youtube.embed_code,
-                                autoplay: true
-                            },
-                            image: {
-                                url: _this2.monsterOptions.image.url
-                            }
-                        }),
-                        _this2.popUpContent.content
-                    )
+                    _this2.props.children
                 ), document.getElementById('infoWindow'));
             });
 
@@ -719,28 +649,31 @@ var Map = function (_Component) {
 
             var marker = new window.google.maps.Marker({
                 map: map,
-                icon: this.gMapOptions.googleAPIOpts.marker.icon,
-                title: this.gMapOptions.googleAPIOpts.marker.title,
+                icon: this.mappyOpts.marker.icon,
+                title: this.mappyOpts.marker.title,
                 position: {
-                    lat: this.gMapOptions.googleAPIOpts.location.lat,
-                    lng: this.gMapOptions.googleAPIOpts.location.lng
+                    lat: this.mappyOpts.location.lat,
+                    lng: this.mappyOpts.location.lng
                 }
             });
 
             marker.addListener('click', function (e) {
-                _this3.InfoWindow(e, map);
-                map.setZoom(_this3.gMapOptions.googleAPIOpts.onClickZoom);
+                if (_this3.mappyOpts.marker.click) {
+                    _this3.InfoWindow(e, map);
+                }
+
+                map.setZoom(_this3.mappyOpts.onClickZoom);
                 map.setMapTypeId('satellite');
             });
         }
     }, {
         key: 'gScript',
         value: function gScript(e) {
-            var map = new window.google.maps.Map(document.getElementById(this.props.id), this.gMapOptions.googleAPIOpts);
+            var map = new window.google.maps.Map(document.getElementById(this.props.id), this.mappyOpts);
             //this.props.onMapLoad(map);
             this.marker(map);
 
-            if (this.gMapOptions.googleAPIOpts.infoWindowStartOpen === true) {
+            if (this.mappyOpts.infoWindowStartOpen === true) {
                 this.InfoWindow(e, map);
             }
         }
@@ -752,7 +685,7 @@ var Map = function (_Component) {
             if (!window.google) {
                 var s = document.createElement('script');
                 s.type = 'text/javascript';
-                s.src = 'https://maps.google.com/maps/api/js?key=AIzaSyAOlJGrIizTC33VGo06CpRenExyJLm19PE';
+                s.src = 'https://maps.google.com/maps/api/js?key=' + (this.props.googleAPI.key ? this.props.googleAPI.key : '');
                 var x = document.getElementsByTagName('script')[0];
                 x.parentNode.insertBefore(s, x);
                 // Below is important. 
@@ -768,14 +701,14 @@ var Map = function (_Component) {
         key: 'render',
         value: function render() {
             return _react2.default.createElement('div', { style: {
-                    width: this.gMapOptions.googleAPIOpts.mapSize.width,
-                    height: this.gMapOptions.googleAPIOpts.mapSize.height
+                    width: this.mappyOpts.mapSize.width,
+                    height: this.mappyOpts.mapSize.height
                 }, id: this.props.id });
         }
     }]);
 
     return Map;
-}(_react.Component);
+}(_react2.default.Component);
 
 exports.default = Map;
 
@@ -24270,6 +24203,179 @@ module.exports = function (css) {
 	return fixedCss;
 };
 
+
+/***/ }),
+/* 23 */,
+/* 24 */,
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Youtube = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Youtube = exports.Youtube = function (_Component) {
+    _inherits(Youtube, _Component);
+
+    function Youtube(props) {
+        _classCallCheck(this, Youtube);
+
+        var _this = _possibleConstructorReturn(this, (Youtube.__proto__ || Object.getPrototypeOf(Youtube)).call(this, props));
+
+        _this.youtube = {
+            url: 'https://www.youtube.com/embed/',
+            autoPlay: false,
+            controls: false,
+            code: null
+        };
+        return _this;
+    }
+
+    _createClass(Youtube, [{
+        key: 'render',
+        value: function render() {
+            var yt_url = '' + this.youtube.url + (this.props.code ? this.props.code : this.youtube.code) + '?&autoplay=' + (this.props.autoPlay ? this.props.autoPlay : this.youtube.autoPlay) + '&controls=' + (this.props.controls ? this.props.controls : this.youtube.controls); // youtube url
+            var yt_iframe = _react2.default.createElement('iframe', { width: '100%', height: '200px', src: yt_url, frameborder: '0', allow: 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen: true });
+            return _react2.default.createElement(
+                'div',
+                { className: 'info-window-wrapper' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'youtube' },
+                    yt_iframe
+                )
+            );
+        }
+    }]);
+
+    return Youtube;
+}(_react.Component);
+
+exports.default = Youtube;
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.InfoWindow = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var InfoWindow = exports.InfoWindow = function (_Component) {
+    _inherits(InfoWindow, _Component);
+
+    function InfoWindow(props) {
+        _classCallCheck(this, InfoWindow);
+
+        return _possibleConstructorReturn(this, (InfoWindow.__proto__ || Object.getPrototypeOf(InfoWindow)).call(this, props));
+    }
+
+    _createClass(InfoWindow, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "info-window-wrapper" },
+                this.props.children
+            );
+        }
+    }]);
+
+    return InfoWindow;
+}(_react.Component);
+
+exports.default = InfoWindow;
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Content = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Content = exports.Content = function (_Component) {
+    _inherits(Content, _Component);
+
+    function Content(props) {
+        _classCallCheck(this, Content);
+
+        return _possibleConstructorReturn(this, (Content.__proto__ || Object.getPrototypeOf(Content)).call(this, props));
+    }
+
+    _createClass(Content, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "content" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "content-wrapper" },
+                    this.props.children
+                )
+            );
+        }
+    }]);
+
+    return Content;
+}(_react.Component);
+
+exports.default = Content;
 
 /***/ })
 /******/ ]);
