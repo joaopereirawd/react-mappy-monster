@@ -10,7 +10,6 @@ export class InfoWindow extends Component {
             <div className="info-window-wrapper">
                 {this.props.children}
             </div>
-
         );
     }
 }

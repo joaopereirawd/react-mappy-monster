@@ -580,31 +580,26 @@ var Map = exports.Map = function (_React$Component) {
 
         _this.mappyOpts = {
             marker: {
-                icon: _mapMarker2.default,
-                title: 'Your Marker Title'
+                icon: _mapMarker2.default
             },
             mapSize: {
                 width: '100%',
                 height: '450px'
             },
-            location: {
-                lat: 37.422204,
-                lng: -122.083596
-            },
             center: {
-                lat: 37.422204,
-                lng: -122.083596
+                lat: _this.props.location.lat,
+                lng: _this.props.location.lng
             },
-            zoom: 5,
-            onClickZoom: 17,
-            styles: defaultTheme,
-            mapTypeControl: false,
-            streetViewControl: false,
-            rotateControl: false,
-            fullscreenControl: false,
-            scrollwheel: false,
-            infoWindowOffSetY: -60,
-            infoWindowStartOpen: false
+            zoom: _this.props.zoom ? _this.props.zoom : 5,
+            onClickZoom: _this.props.onClickZoom ? _this.props.onClickZoom : 17,
+            styles: _this.props.styles ? _this.props.styles : defaultTheme,
+            mapTypeControl: _this.props.mapTypeControl ? _this.props.mapTypeControl : false,
+            streetViewControl: _this.props.streetViewControl ? _this.props.streetViewControl : false,
+            rotateControl: _this.props.rotateControl ? _this.props.rotateControl : false,
+            fullscreenControl: _this.props.fullscreenControl ? _this.props.fullscreenControl : false,
+            scrollwheel: _this.props.scrollwheel ? _this.props.scrollwheel : false,
+            infoWindowOffSetY: _this.props.infoWindowOffSetY ? _this.props.infoWindowOffSetY : -60,
+            infoWindowStartOpen: _this.props.infoWindowStartOpen ? _this.props.infoWindowStartOpen : false
         };
 
         _this.gScript = _this.gScript.bind(_this);
@@ -621,8 +616,8 @@ var Map = exports.Map = function (_React$Component) {
                 content: '<div id="infoWindow" />',
                 pixelOffset: new window.google.maps.Size(0, this.mappyOpts.infoWindowOffSetY),
                 position: {
-                    lat: this.mappyOpts.location.lat,
-                    lng: this.mappyOpts.location.lng
+                    lat: this.props.location.lat ? this.props.location.lat : '',
+                    lng: this.props.location.lng ? this.props.location.lng : ''
                 }
             });
 
@@ -649,10 +644,10 @@ var Map = exports.Map = function (_React$Component) {
             var marker = new window.google.maps.Marker({
                 map: map,
                 icon: this.props.markerIcon ? this.props.markerIcon : this.mappyOpts.marker.icon,
-                title: this.props.markerTitle ? this.props.markerTitle : this.mappyOpts.marker.title,
+                title: this.props.markerTitle ? this.props.markerTitle : '',
                 position: {
-                    lat: this.mappyOpts.location.lat,
-                    lng: this.mappyOpts.location.lng
+                    lat: this.props.location.lat ? this.props.location.lat : '',
+                    lng: this.props.location.lng ? this.props.location.lng : ''
                 }
             });
 
@@ -681,7 +676,7 @@ var Map = exports.Map = function (_React$Component) {
             if (!window.google) {
                 var s = document.createElement('script');
                 s.type = 'text/javascript';
-                s.src = 'https://maps.google.com/maps/api/js?key=' + (this.props.googleAPI.key ? this.props.googleAPI.key : '');
+                s.src = 'https://maps.google.com/maps/api/js?key=' + (this.props.apiKey ? this.props.apiKey : '');
                 var x = document.getElementsByTagName('script')[0];
                 x.parentNode.insertBefore(s, x);
                 // Below is important. 
@@ -697,8 +692,8 @@ var Map = exports.Map = function (_React$Component) {
         key: 'render',
         value: function render() {
             return _react2.default.createElement('div', { style: {
-                    width: this.mappyOpts.mapSize.width,
-                    height: this.mappyOpts.mapSize.height
+                    width: this.props.width ? this.props.width : this.mappyOpts.mapSize.width,
+                    height: this.props.height ? this.props.height : this.mappyOpts.mapSize.height
                 }, className: 'mappyMonster', id: this.props.id });
         }
     }]);
