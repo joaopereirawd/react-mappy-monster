@@ -580,9 +580,8 @@ var Map = exports.Map = function (_React$Component) {
 
         _this.mappyOpts = {
             marker: {
-                click: true,
                 icon: _mapMarker2.default,
-                title: 'Your Marker Title Goes here'
+                title: 'Your Marker Title'
             },
             mapSize: {
                 width: '100%',
@@ -649,8 +648,8 @@ var Map = exports.Map = function (_React$Component) {
 
             var marker = new window.google.maps.Marker({
                 map: map,
-                icon: this.mappyOpts.marker.icon,
-                title: this.mappyOpts.marker.title,
+                icon: this.props.markerIcon ? this.props.markerIcon : this.mappyOpts.marker.icon,
+                title: this.props.markerTitle ? this.props.markerTitle : this.mappyOpts.marker.title,
                 position: {
                     lat: this.mappyOpts.location.lat,
                     lng: this.mappyOpts.location.lng
@@ -658,10 +657,7 @@ var Map = exports.Map = function (_React$Component) {
             });
 
             marker.addListener('click', function (e) {
-                if (_this3.mappyOpts.marker.click) {
-                    _this3.InfoWindow(e, map);
-                }
-
+                _this3.InfoWindow(e, map);
                 map.setZoom(_this3.mappyOpts.onClickZoom);
                 map.setMapTypeId('satellite');
             });
@@ -703,7 +699,7 @@ var Map = exports.Map = function (_React$Component) {
             return _react2.default.createElement('div', { style: {
                     width: this.mappyOpts.mapSize.width,
                     height: this.mappyOpts.mapSize.height
-                }, id: this.props.id });
+                }, className: 'mappyMonster', id: this.props.id });
         }
     }]);
 
