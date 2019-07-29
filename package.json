@@ -1,51 +1,31 @@
 {
-  "name": "react-mappy-monster",
-  "version": "2.0.0",
-  "description": "",
-  "main": "build/index.js",
-  "author": "João Pereira",
-  "email": "joaopereirawd@gmail.com",
-  "license": "MIT",
-  "homepage": "https://github.com/joaopereirawd/react-mappy-monster",
-  "bugs": "https://github.com/joaopereirawd/react-mappy-monster/issues",
-  "repository": {
-    "url": "https:  //github.com/joaopereirawd/react-mappy-monster",
-    "type": "git"
-  },
-  "keywords": [
-    "Google",
-    "GoogleMaps",
-    "MappyMonster",
-    "reactjs",
-    "popup"
-  ],
-  "peerDependencies": {
-    "react": "^15.5.4"
-  },
+  "name": "mappy-monster",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "npm": "^6.5.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.0",
-    "styled-jsx": "^3.1.2",
-    "webpack": "^2.6.1"
+    "react-scripts": "3.0.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch",
-    "build": "webpack"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
-    "babel-loader": "^7.0.0",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.5.1",
-    "copy-webpack-plugin": "^4.6.0",
-    "css-loader": "^2.1.0",
-    "file-loader": "^3.0.1",
-    "style-loader": "^0.23.1",
-    "url-loader": "^1.1.2"
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
