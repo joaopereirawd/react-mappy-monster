@@ -1,0 +1,41 @@
+body * { 
+    font-family: 'Lato';
+    font-weight: 400;
+}
+
+section {
+    &.page-content {
+        position:relative;
+        width:100%;
+        margin-top:200px;
+            .caption {
+                h1 {
+                    font-weight: 400;
+                    font-size:25px;
+                    span {
+                        font-weight: 900;
+                    }
+                }
+            }
+            .iconset {
+                position:relative;
+                width:100%;
+                padding:50px 0px;
+                ul {
+                    padding:0px;
+                    margin:0 auto;
+                        li {
+                            display: inline-block;
+                            width:250px;
+                            height:250px;
+                            background:#fee2ec;
+                            border-radius:150px;
+                            margin:20px;
+                            line-height:300px;    
+                        }
+                }
+            }
+
+    }
+}
+
