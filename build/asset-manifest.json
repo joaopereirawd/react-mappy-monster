@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/react-mappy-monster/static/css/main.6c79fd30.chunk.css",
+    "main.js": "/react-mappy-monster/static/js/main.e5843095.chunk.js",
+    "main.js.map": "/react-mappy-monster/static/js/main.e5843095.chunk.js.map",
+    "runtime~main.js": "/react-mappy-monster/static/js/runtime~main.3a26ed9b.js",
+    "runtime~main.js.map": "/react-mappy-monster/static/js/runtime~main.3a26ed9b.js.map",
+    "static/js/2.42c6d73e.chunk.js": "/react-mappy-monster/static/js/2.42c6d73e.chunk.js",
+    "static/js/2.42c6d73e.chunk.js.map": "/react-mappy-monster/static/js/2.42c6d73e.chunk.js.map",
+    "index.html": "/react-mappy-monster/index.html",
+    "precache-manifest.ac28a28d708db0b74bed41ac8b55b6b4.js": "/react-mappy-monster/precache-manifest.ac28a28d708db0b74bed41ac8b55b6b4.js",
+    "service-worker.js": "/react-mappy-monster/service-worker.js",
+    "static/css/main.6c79fd30.chunk.css.map": "/react-mappy-monster/static/css/main.6c79fd30.chunk.css.map",
+    "static/media/icon-design.svg": "/react-mappy-monster/static/media/icon-design.66f9c61f.svg",
+    "static/media/icon-google.svg": "/react-mappy-monster/static/media/icon-google.5f64a793.svg",
+    "static/media/icon-relax.svg": "/react-mappy-monster/static/media/icon-relax.60069f48.svg",
+    "static/media/logo.svg": "/react-mappy-monster/static/media/logo.a6b857bf.svg",
+    "static/media/map.svg": "/react-mappy-monster/static/media/map.36109dff.svg",
+    "static/media/monster.png": "/react-mappy-monster/static/media/monster.a4e61329.png"
+  }
+}
