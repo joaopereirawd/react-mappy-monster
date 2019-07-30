@@ -20,7 +20,7 @@
     "popup"
   ],
   "peerDependencies": {
-    "react": "^15.5.4"
+    "react": "^16.8.6"
   },
   "dependencies": {
     "npm": "^6.5.0",
