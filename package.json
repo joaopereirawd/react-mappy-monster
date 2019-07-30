@@ -10,7 +10,8 @@
     "react-dom": "^16.8.6",
     "react-mappy-monster": "^2.0.0",
     "react-scripts": "3.0.1",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.38.0"
   },
   "scripts": {
     "start": "react-scripts start",
