@@ -1,0 +1,16 @@
+footer {
+    &.footer {
+        position:relative;
+        width:100%;
+        min-height:400px;
+        display: inline-block;
+        background-color:#191919;
+            .ads-wrapper-content {
+                position:relative; 
+                width:100%; 
+                min-height:200px;
+                text-align:center;
+                background:#202020;
+            }
+    }
+}
