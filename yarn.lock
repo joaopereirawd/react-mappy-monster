@@ -9660,10 +9660,10 @@ react-is@^16.8.1, react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
-react-mappy-monster@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/react-mappy-monster/-/react-mappy-monster-2.0.0.tgz#09527a904911779f6f920a86955a27c94da4568e"
-  integrity sha512-ATAcINDUy9vJ80PPFGEuSS9eq3loDnQnrb9CChQ0zbkunJuQbUjfSOpAtO2l577mMp1pNkFUNcbwr5uAacRXPg==
+react-mappy-monster@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/react-mappy-monster/-/react-mappy-monster-2.0.3.tgz#7e58cfe44ddb71abcf31d9d80509bcec4a92e040"
+  integrity sha512-TN0SstkQJXvTv0h3cbmf6BH3K7FxXVFSN0eS9S5k8O7dA5YLZvZDdiyZ1rO3m0eLKzNUDF3r2pO6b1Wu1wOWVw==
   dependencies:
     npm "^6.5.0"
     react "^16.8.6"

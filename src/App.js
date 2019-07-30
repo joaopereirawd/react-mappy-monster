@@ -129,7 +129,7 @@ function App() {
                       </div>
                       <MappyMonster
                           id='mappyMonster'
-                          apiKey='AIzaSyAK2OIiIJVwGjQqDv19oCtxCe96IsFz2bM' //AIzaSyBMs0tMOpPjLLlBzLBQcIP9GFRbYApexD8
+                          apiKey='' //AIzaSyBMs0tMOpPjLLlBzLBQcIP9GFRbYApexD8
                           width=''
                           height='450px'
                           markerIcon={''}
