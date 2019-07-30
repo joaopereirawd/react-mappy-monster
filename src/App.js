@@ -31,7 +31,10 @@ function App() {
         <section className="heroshot">
             <div className="hero-graphics">
                   <div className="mappy">
-                    <img src={mappy}></img> 
+                        <div className="ads-place">
+                            <CarbonAds carbonUrl={'//cdn.carbonads.com/carbon.js?serve=CK7DLK3E&placement=joaopereirawdgithubio'} />
+                        </div>
+                        <img src={mappy}></img> 
                   </div>
                   <div className="map">
                       <img src={map}></img> 
@@ -41,7 +44,7 @@ function App() {
         <section className="page-content">
             <div className="row"> 
                 <div className="caption">
-                    <h1><span>react-mappy-monster</span> is a react.js component blah blah blah</h1> 
+                    <h1><span>react-mappy-monster</span> blah blah blah</h1> 
                 </div>
                 <div className="iconset">
                       <ul id="how-to">
@@ -121,9 +124,7 @@ function App() {
         </section>
         <footer className="footer">
             <div className="row">
-                <div className="ads-wrapper-content">
-                      <CarbonAds carbonUrl={'//cdn.carbonads.com/carbon.js?serve=CK7DLK3E&placement=joaopereirawdgithubio'} />
-                </div>
+                {/* <div className="ads-wrapper-content"></div> */}
             </div>
         </footer>
     </div>
