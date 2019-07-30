@@ -59,7 +59,6 @@ section {
                         }
                 }
             }
-
     }
 }
 
@@ -89,6 +88,9 @@ section {
                 text-align:left;
                 font-size:16px;
             }
+    }
+    &.demo-section {
+        padding-bottom:0px;
     }
 }
 

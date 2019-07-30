@@ -11,6 +11,7 @@ import iconGoogle from './img/icon-google.svg';
 import iconDesign from './img/icon-design.svg';
 import iconRelax from './img/icon-relax.svg';
 import CarbonAds from "react-carbon-ads"
+import MappyMonster, { InfoWindow, Content, Youtube } from 'react-mappy-monster';
 
 function App() {
   return (
@@ -121,7 +122,53 @@ function App() {
                       </div>
                   </div>
               </section>
+              <section className="code-section demo-section">
+                  <div className="row">
+                      <div className="title">
+                          <h1>Demo</h1>
+                      </div>
+                      <MappyMonster
+                          id='mappyMonster'
+                          apiKey='AIzaSyAK2OIiIJVwGjQqDv19oCtxCe96IsFz2bM' //AIzaSyBMs0tMOpPjLLlBzLBQcIP9GFRbYApexD8
+                          width=''
+                          height='450px'
+                          markerIcon={''}
+                          markerTitle='YOUR_TITLE'
+                          location={{
+                              lat: 37.422204,
+                              lng: -122.083596
+                          }}
+                          zoom={5}
+                          onClickZoom={17} //Done 
+                          styles={[{ "featureType": "all", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "all", "elementType": "labels.text", "stylers": [{ "visibility": "off" }] }, { "featureType": "all", "elementType": "labels.text.fill", "stylers": [{ "saturation": 36 }, { "color": "#000000" }, { "lightness": 40 }] }, { "featureType": "all", "elementType": "labels.text.stroke", "stylers": [{ "visibility": "on" }, { "color": "#000000" }, { "lightness": 16 }] }, { "featureType": "all", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "administrative", "elementType": "geometry.fill", "stylers": [{ "color": "#000000" }] }, { "featureType": "administrative", "elementType": "geometry.stroke", "stylers": [{ "color": "#000000" }, { "lightness": 17 }, { "weight": 1.2 }] }, { "featureType": "administrative", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "administrative", "elementType": "labels.text", "stylers": [{ "visibility": "off" }] }, { "featureType": "administrative.country", "elementType": "all", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "administrative.country", "elementType": "geometry", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "administrative.country", "elementType": "labels.text", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "administrative.province", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "administrative.locality", "elementType": "all", "stylers": [{ "visibility": "simplified" }, { "saturation": "-100" }, { "lightness": "30" }] }, { "featureType": "administrative.neighborhood", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "administrative.land_parcel", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "landscape", "elementType": "all", "stylers": [{ "visibility": "simplified" }, { "gamma": "0.00" }, { "lightness": "74" }, { "hue": "#ff0073" }] }, { "featureType": "landscape", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 20 }] }, { "featureType": "landscape", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "landscape", "elementType": "labels.text", "stylers": [{ "visibility": "off" }] }, { "featureType": "landscape.man_made", "elementType": "all", "stylers": [{ "lightness": "3" }] }, { "featureType": "poi", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 21 }] }, { "featureType": "poi", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi", "elementType": "labels.text", "stylers": [{ "visibility": "off" }] }, { "featureType": "road", "elementType": "geometry", "stylers": [{ "visibility": "simplified" }, { "color": "#424242" }, { "lightness": "-61" }] }, { "featureType": "road", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "road", "elementType": "labels.text", "stylers": [{ "visibility": "off" }] }, { "featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{ "color": "#000000" }, { "lightness": 17 }] }, { "featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [{ "color": "#000000" }, { "lightness": 29 }, { "weight": 0.2 }] }, { "featureType": "road.arterial", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 18 }] }, { "featureType": "road.local", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 16 }] }, { "featureType": "transit", "elementType": "geometry", "stylers": [{ "color": "#2a2727" }, { "lightness": "-61" }, { "saturation": "-100" }] }, { "featureType": "transit", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "water", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 17 }] }, { "featureType": "water", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "water", "elementType": "labels.text", "stylers": [{ "visibility": "off" }] }]}
+                          mapTypeControl={true}
+                          streetViewControl={true}
+                          rotateControl={true}
+                          fullscreenControl={true}
+                          scrollwheel={false}
+                          infoWindowOffSetY={-60}
+                          infoWindowStartOpen={false}
+                      >
+
+                          <InfoWindow>
+                              <Youtube code="RiIE5GsiVWQ" autoPlay={true} />
+                              <Content>
+                                  <p>Your content goes here</p>
+                                  <button onClick={() => alert('this is amazing!!!')} className="yourClass" style={
+                                      {
+                                          color: '#fff',
+                                          background: '#437cff',
+                                          padding: '10px 20px',
+                                          borderRadius: '50px'
+                                      }}>Call To Action
+                </button>
+                              </Content>
+                          </InfoWindow>
+                      </MappyMonster>
+                  </div>
+              </section>
         </section>
+
         <footer className="footer">
             <div className="row">
                 {/* <div className="ads-wrapper-content"></div> */}
