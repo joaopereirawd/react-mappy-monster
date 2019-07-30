@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import mapMarker from './img/svg/map-marker.svg';
+import mapMarker from './img/map-marker.svg';
 import './css/app.css';
 
 
