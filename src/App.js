@@ -44,7 +44,7 @@ function App() {
                     <h1><span>react-mappy-monster</span> is a react.js component blah blah blah</h1> 
                 </div>
                 <div className="iconset">
-                    <ul>
+                      <ul id="how-to">
                         <li>
                             <div className="iconset-wrapper">
                                     <div className="iconset-content">
@@ -104,11 +104,7 @@ function App() {
                         <h1>Usage</h1>
                     </div>
                     <div className="code-content">
-                        <code>
-                        yarn add react-mappy-monster
-                        <br></br>or<br></br>
-                        npm i react-mappy-monster
-                    </code>
+                        <code></code>
                     </div>
                 </div>
             </section>
