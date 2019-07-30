@@ -1,0 +1,20 @@
+.heroshot {
+    position:relative;
+    display:inline-block; 
+    background:#191919;
+    min-height:550px; 
+    width:100%; 
+        .hero-graphics{
+            position:absolute;
+            width:100%;
+            height:auto; 
+            bottom: -150px;
+        }
+        .map {
+
+        }
+        .mappy {
+            top: 332px;
+            position: relative;
+        }
+}
