@@ -36,13 +36,18 @@ button.gm-ui-hover-effect img {
 
 /*Close Button*/
 button.gm-ui-hover-effect {
-    background: white !important;
+    background:#e86d98 !important;
     border-radius: 50%;
     top: 4px !important;
     z-index: 9999;
     right: 4px !important;
     color: #fff;
-    width: 20px !important;
-    height: 20px !important;
-    border: 1px solid #6d6d6d !important;
+    width: 22px !important;
+    height: 22px !important;
+    border: 3px solid #1f1f1f !important;
+    background-image:url('../img/close-icon.svg') !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: 6px !important;
+
 }
