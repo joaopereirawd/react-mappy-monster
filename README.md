@@ -1,3 +1,5 @@
+<img align="right" src="https://github.com/joaopereirawd/react-mappy-monster/blob/landing-page/src/img/gh-monster.svg" />
+
 # MappyMonster
 
 
