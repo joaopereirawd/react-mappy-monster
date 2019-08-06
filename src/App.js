@@ -49,7 +49,7 @@ function App() {
         <section className="page-content">
             <div className="row"> 
                 <div className="caption">
-                    <h1><span>react-mappy-monster</span> blah blah blah</h1> 
+                    <h1><span>react-mappy-monster</span> is a react component that allows you to create a map quickly and easily.</h1>
                 </div>
                 <div className="iconset">
                       <ul id="how-to">

@@ -9,12 +9,27 @@ section {
         width:100%;
         margin-top:280px;
             .caption {
+                position:relative;
+                max-width:900px;
+                margin:0px auto; 
                 h1 {
                     font-weight: 400;
                     font-size:25px;
                     span {
                         font-weight: 900;
                     }
+                }
+            }
+            .caption-specs {
+                margin:0px;
+                margin-top:45px;
+                li {
+                    list-style: none;
+                    font-size:18px; 
+                    text-transform: uppercase;
+                    font-weight:900;
+                    color:#ef6d9a;
+                    margin-bottom:10px; 
                 }
             }
             .iconset {
