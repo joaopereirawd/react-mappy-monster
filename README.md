@@ -1,7 +1,7 @@
 <img align="right" src="https://github.com/joaopereirawd/react-mappy-monster/blob/landing-page/src/img/gh-monster.svg" />
 
 # MappyMonster
-
+react-mappy-monster is a react component that allows you to create a map quickly and easily.
 
 ## Getting Started
 
@@ -15,7 +15,7 @@
 ```js
  import MappyMonster, { InfoWindow, Content, Youtube } from 'react-mappy-monster';
 ```
-3. Wrapper Component
+
 ```js
 <MappyMonster
     id='mappyMonster'
