@@ -129,7 +129,7 @@ function App() {
                       </div>
                       <MappyMonster
                           id='mappyMonster'
-                          apiKey='' //AIzaSyBMs0tMOpPjLLlBzLBQcIP9GFRbYApexD8
+                          apiKey=''
                           width=''
                           height='450px'
                           markerIcon={''}
@@ -155,13 +155,16 @@ function App() {
                               <Content>
                                   <p>Your content goes here</p>
                                   <button onClick={() => alert('this is amazing!!!')} className="yourClass" style={
-                                      {
-                                          color: '#fff',
-                                          background: '#437cff',
-                                          padding: '10px 20px',
-                                          borderRadius: '50px'
-                                      }}>Call To Action
-                </button>
+                                        {
+                                            color: '#ee6f9b',
+                                            background: '#333',
+                                            padding: '10px 20px',
+                                            borderRadius: '50px',
+                                            border:'4px solid #000',
+                                            fontWeight:'600',
+                                            background: 'transparent'
+                                        }}>Call To Action
+                                    </button>
                               </Content>
                           </InfoWindow>
                       </MappyMonster>
