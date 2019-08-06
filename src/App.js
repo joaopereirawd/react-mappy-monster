@@ -6,7 +6,8 @@ import './scss/hero.scss';
 import './scss/page.scss';
 import './scss/footer.scss';
 import map from './img/map.svg';
-import mappy from './img/monster.png';
+import mappy from './img/monster.svg';
+import teeth from './img/teeth.svg';
 import iconGoogle from './img/icon-google.svg';
 import iconDesign from './img/icon-design.svg';
 import iconRelax from './img/icon-relax.svg';
@@ -34,6 +35,9 @@ function App() {
                   <div className="mappy">
                         <div className="ads-place">
                             <CarbonAds carbonUrl={'//cdn.carbonads.com/carbon.js?serve=CK7DLK3E&placement=joaopereirawdgithubio'} />
+                        </div>
+                        <div className="teeth">
+                          <img src={teeth}></img> 
                         </div>
                         <img src={mappy}></img> 
                   </div>

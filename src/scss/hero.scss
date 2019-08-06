@@ -27,10 +27,12 @@
                     border-radius: 5px;
                     padding: 5px;
                     top: 131px;
+                    z-index:1;
                         .carbon-adds-wrapper {
                             margin:0px;
                                 #carbonads {
                                     margin:0px !important;
+                                    height:109px;
                                         .carbon-img img {
                                             height:89px !important;
                                         }
@@ -40,5 +42,15 @@
                                 }
                         }
                 }
+                .teeth {
+                    position: absolute;
+                    z-index: 3;
+                    width: 164px;
+                    top: 130px;
+                    left: 64px;
+                    pointer-events:none;
+                    transition:all .2s;
+                }
+                &:hover .teeth{ opacity:.2;}
         }
 }
