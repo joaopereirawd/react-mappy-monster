@@ -27,7 +27,7 @@
         lng: -122.083596
     }}
     zoom={5}
-    onClickZoom={17} //Done 
+    onClickZoom={17}
     mapTypeControl={true}
     streetViewControl={true}
     rotateControl={true}
@@ -57,10 +57,12 @@
 </MappyMonster>
 ```
 ## Props 
-
+```
+ Soon!
+```
 
 ## Versioning
-The `react-cookie-bubble` library follows [Semantic Versioning](https://semver.org/). </br>
+The `react-mappy-monster` library follows [Semantic Versioning](https://semver.org/). </br>
 `[MAJOR].[MINOR].[PATCH]` 
 
 ## Support
